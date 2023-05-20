@@ -234,6 +234,19 @@ template {
   display: none
 }
 
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
 /* ELEMENT BASE STYLES */
 
 .wrapper {
@@ -246,6 +259,9 @@ template {
   margin: 0;
   padding: 0;
   border: 0 solid transparent;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 /* reset list style */
@@ -269,6 +285,13 @@ object {
   height: auto;
 }
 
+.btn {
+  padding: 0.5em 1em;
+  border-radius: 10px;
+  background-color: var(--button);
+  color: var(--white);
+  cursor: pointer;
+}
 
 /* TYPOGRAPHY ELEMENTS RESET STYLES */
 
@@ -333,7 +356,6 @@ textarea:focus {
 
 /* VARIABLES */
 
-
 :root {
 
   /* colours */
@@ -341,13 +363,18 @@ textarea:focus {
   --white: #fdfdfd;
   --lightGrey: #ecf0ef;
   --mediumGrey: #b3beba;
-  --accent: #b77a5b;
+  --accent: rgba(183, 122, 91);
+  --accentO: rgba(183, 122, 91, 0.5);
   --fontDark: #242424;
+  --logoFont: #515151;
   --button: #c37656;
 
   /* fonts */
   --lato: 'Lato', sans-serif;
   --raleway: 'Raleway', sans-serif;
+
+  /* sizes */
+  --navHeight: clamp(60px, 8%, 80px);
 }
 
 /* VARIABLES END*/
@@ -362,10 +389,22 @@ h5,
 h6 {
   font-family: var(--lato);
   color: var(--headers);
+  padding: 0;
+  margin: 0;
 }
 
 h1 {
   font-weight: 800;
+  font-size: clamp(1.75rem, 2.25rem, 60px);
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: clamp(1.2rem, 1.4rem, 30px);
+}
+
+h3{
+  font-size: clamp(1.4rem, 1.8rem, 40px);
 }
 
 h2,
@@ -376,7 +415,6 @@ h6 {
   font-weight: 600;
 }
 
-
 body {
   font-family: var(--raleway);
   font-weight: 400;
@@ -384,11 +422,235 @@ body {
   color: var(--mainBody);
 }
 
+p {
+  line-height: 1.6;
+}
+
+.topNav p {
+  font-family: 'Permanent Marker', cursive;
+  font-size: clamp(1.8rem ,2.5rem, 3rem);
+  color: var(--logoFont);
+}
+
+.artCardBody p {
+  line-height: 1.3;
+}
+
+.lowerFooter {
+  color: var(--lightGrey);
+}
+
 /* TYPOGRAPHY END*/
 
+/* HEADER STYLES */
+
+header {
+  background-color: var(--lightGrey);
+  height: 100vh;
+}
+
+.headerContain {
+  height: calc(100% - var(--navHeight));
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 5%;
+}
+
+.headerIntro {
+  width: 50%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 3%;
+}
+
+.introTitleH1 {
+  padding-bottom: 1%;
+}
+
+.introTitleH2 {
+  padding-top: 5px;
+  border-top: 1px solid var(--accentO);
+}
+
+.introBtns {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+
+
+/* HEADER STYLES END*/
+
+
 /* NAVIGATION STYLES */
+
+.topNav {
+  background-color: var(--mediumGrey);
+  height: var(--navHeight);
+}
+
+
+
+.navBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  width: 60px;
+}
+
 /* NAVIGATION STYLES END*/
+
 /* HOME STYLES */
+
+/* call to action section */
+.callToAction {
+  text-align: center;
+  padding: 5vh 0;
+  background-color: var(--mediumGrey);
+}
+
+.callH2 {
+  border-bottom: 2px solid var(--accentO);
+  padding-bottom: 5px;
+  display: inline-block;
+}
+
+.callH3 {
+  padding: 10px 0;
+}
+
+form {
+  display: flex; 
+  justify-content: center;
+  padding-top: 2%;
+}
+
+input {
+  border-radius: 5px;
+  margin: 0 2%;
+  padding-left: 1em;
+}
+
+input[type=text] {
+  width: 20%;
+}
+
+input[type=email] {
+  width: 30%;
+}
+
+/* articles section */
+.articles {
+  background-color: var(--lightGrey);
+  text-align: center;
+  padding: 5vh 0;
+}
+
+.artCardContain {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  padding-top: 4%;
+}
+
+.artCard {
+  margin: 10px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  width: 300px;
+}
+
+.artCardHeader img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.artCardBody {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+  min-height: 250px;
+}
+
+.artCardBody h4,
+.artCardBody h5,
+.artCardBody p {
+  padding-bottom: 15px;
+}
+
+.artCardBody button {
+  align-self: flex-end;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.artCardBody button:hover {
+  font-weight: 600;
+}
+
+/* footer */
+
+footer {
+  background-color: var(--mediumGrey);
+}
+
+.upperFooter {
+  display: flex;
+}
+
+.siteMap {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2% 0;
+}
+
+.branding {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.footerNav {
+  padding-right: 100px;
+}
+
+.footerNav ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.lowerFooter {
+  background-color: var(--fontDark);
+  height: 50px;
+  padding: 10px;
+}
+
+.junoBrand {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.junoLogo {
+  width: 30px;
+}
+
 /* HOME STYLES END*/
 /* LOGIN STYLES */
 /* LOGIN STYLES END*/
