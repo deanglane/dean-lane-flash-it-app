@@ -493,7 +493,7 @@ p {
 .navMenu ul {
   display: flex;
   align-items: center;
-  gap: 50px;
+  gap: 40px;
   /* height: 100%; */
 }
 
@@ -502,10 +502,6 @@ p {
   display: flex;
   align-items: center;
   border-bottom: 2px solid transparent;
-}
-
-.navMenu li:hover {
-  border-bottom: 2px solid var(--button);
 }
 
 .navMenu a {
@@ -562,6 +558,9 @@ header {
   width: 20%;
 }
 
+/* .download {
+  width: 150px;
+} */
 
 /* HEADER STYLES END*/
 
