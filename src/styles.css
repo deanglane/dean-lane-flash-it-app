@@ -285,11 +285,11 @@ object {
   height: auto;
 }
 
+/* button base styling */
 .btn {
-  padding: 0.5em 1em;
-  border-radius: 10px;
-  background-color: var(--button);
-  color: var(--white);
+  padding: 1em 1.5em;
+  border-radius: 50px;
+  background-color: var(--callToActionBtn);
   cursor: pointer;
 }
 
@@ -368,13 +368,15 @@ textarea:focus {
   --fontDark: #242424;
   --logoFont: #515151;
   --button: #c37656;
+  --callToActionBtn: #f6c34f;
 
   /* fonts */
   --lato: 'Lato', sans-serif;
   --raleway: 'Raleway', sans-serif;
+  --logoFont: 'Permanent Marker', cursive;
 
   /* sizes */
-  --navHeight: clamp(60px, 8%, 80px);
+  --navHeight: clamp(60px, 12%, 100px);
 }
 
 /* VARIABLES END*/
@@ -394,18 +396,16 @@ h6 {
 }
 
 h1 {
-  font-weight: 800;
-  font-size: clamp(1.75rem, 2.25rem, 60px);
-  text-transform: uppercase;
+  font-weight: 400;
+  font-size: clamp(2.75rem, 3.6rem, 100px);
+  
 }
 
-h2 {
-  font-size: clamp(1.2rem, 1.4rem, 30px);
+h2, 
+h3 {
+  font-size: clamp(0.9rem, 1.2rem, 28px);
 }
 
-h3{
-  font-size: clamp(1.4rem, 1.8rem, 40px);
-}
 
 h2,
 h3,
@@ -427,12 +427,28 @@ p {
   font-size: 1.5rem;
 }
 
-.topNav p {
-  font-family: 'Permanent Marker', cursive;
-  font-size: clamp(1.8rem ,2.5rem, 3rem);
-  color: var(--logoFont);
+/* button base typography styling */
+.btn {
+  color: var(--white);
+  font-weight: 600;
 }
 
+/* navBar */
+
+.navMenu ul {
+  font-weight: 600;
+}
+
+/* header */
+.heroHeadlines h1 {
+  line-height: 1.2;
+}
+
+.heroHeadlines h3 {
+  line-height: 1.6;
+}
+
+/* articles */
 .artCardBody p {
   line-height: 1.3;
   font-size: 1.1rem;
@@ -444,6 +460,74 @@ p {
 
 /* TYPOGRAPHY END*/
 
+
+
+
+/* NAVIGATION STYLES */
+
+.topNav {
+  background-color: var(--lightGrey);
+  height: var(--navHeight);
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+}
+
+.navBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* height: 100%; */
+}
+
+.navMenu {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.navMenu ul {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  /* height: 100%; */
+}
+
+.navMenu li {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  border-bottom: 2px solid transparent;
+}
+
+.navMenu li:hover {
+  border-bottom: 2px solid var(--button);
+}
+
+.navMenu a {
+  display: inline-block;
+}
+
+.logo {
+  width: 60px;
+}
+
+.auth {
+  display: flex;
+  gap: 20px;
+}
+
+.auth button:first-child {
+  background-color: transparent;
+  color: var(--fontDark)
+}
+
+/* NAVIGATION STYLES END*/
+
 /* HEADER STYLES */
 
 header {
@@ -454,8 +538,41 @@ header {
   background-position: center;
 }
 
-.headerContain {
+/* .heroContain {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+} */
+
+.heroHeadlines {
+  text-align: center;
+  padding-top: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+.heroHeadlines h1 {
+  width: 30%;
+  max-width: 450px;
+}
+
+.heroHeadlines h3 {
+  width: 20%;
+}
+
+
+/* HEADER STYLES END*/
+
+/* HOME STYLES */
+
+/* introduction  */
+/* introduction will be what what in the header
+at the beginning */
+.introContain {
   height: calc(100% - var(--navHeight));
+  padding: 100px 0;
 
   display: flex;
   justify-content: space-around;
@@ -463,8 +580,8 @@ header {
   gap: 5%;
 }
 
-.headerIntro {
-  width: 50%;
+.intro {
+  width: 70%;
   height: 100%;
 
   display: flex;
@@ -473,47 +590,55 @@ header {
   gap: 3%;
 }
 
-.introTitleH1 {
-  padding-bottom: 1%;
+.introTitleH2 {
+  text-align: center;
+  text-transform: uppercase;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--accentO);
 }
 
-.introTitleH2 {
-  padding-top: 5px;
-  border-top: 1px solid var(--accentO);
+.intro p {
+  padding-top: 20px;
+  text-align: center;
 }
 
 .introBtns {
   display: flex;
   justify-content: space-evenly;
+  padding-top: 40px;
 }
 
+/* features */
 
-
-/* HEADER STYLES END*/
-
-
-/* NAVIGATION STYLES */
-
-.topNav {
-  background-color: var(--mediumGrey);
-  height: var(--navHeight);
+.feature {
+  background-color: var(--lightGrey);
 }
 
-
-
-.navBar {
+.featureContain {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  padding: 5% 0 5% 0;
 }
 
-.logo {
-  width: 60px;
+.upperFeature {
+  padding-bottom: 100px;
 }
 
-/* NAVIGATION STYLES END*/
+.upperFeature,
+.lowerFeature {
+  display: flex;
+  justify-content: center;
+}
 
-/* HOME STYLES */
+.upperFeature p,
+.lowerFeature p {
+  width: 50%;
+}
+
+.lowerFeature {
+  display: flex;
+}
 
 /* call to action section */
 .callToAction {

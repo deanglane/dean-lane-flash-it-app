@@ -1,5 +1,5 @@
 import './styles.css';
-import artCardImg from './assets/aaron-burden-QJDzYT_K8Xg-unsplash.jpg';
+
 
 function App() {
   return (
@@ -8,40 +8,91 @@ function App() {
 
         <nav className="topNav">
           <div className="wrapper navBar">
-            <div className="logo">
-              <img className="logoImg" src={require('./assets/logo2.png')} alt="" />
+
+            <div className="navMenu">
+              <div className="logo">
+                <img className="logoImg" src={require('./assets/logo2.png')} alt="" />
+              </div>
+              <ul>
+                <li>
+                  <a href="#">Build</a>
+                </li>
+                <li>
+                  <a href="#">Review</a>
+                </li>
+                <li>
+                  <a href="#">Articles</a>
+                </li>
+                <li>
+                  <a href="#">Who We Are</a>
+                </li>
+                <li>
+                  <a href="#">Pricing</a>
+                </li>
+              </ul>
             </div>
-            <div className="navContain">
-              <p>FLASH IT!</p>
+
+            <div className="auth">
+              <button className="btn">Log in</button>
+              <button className="btn">Get Started</button>
             </div>
-            <div className="login">
-              <button className="btn">login</button>
-            </div>
+
           </div>
         </nav>
 
-        <div className="wrapper headerContain">
-
-          <div className="headerIntro">
-            <h1 className="introTitleH1">Flash It</h1>
-            <h2 className="introTitleH2">A card based memory app</h2>
-            <p>Welcome to Flash It!. A web-based flash card app to help with your memory recollection.</p> 
-            <p>Are you tired of traditional study methods that feel mundane and ineffective? Look no further! Introducing the power of flashcards. The time-tested technique that has helped countless learners around the world achieve academic success..
-            </p>
-            <div className="introBtns">
-              <a className="btn" href="#articles">Learn More</a>
-              <button className="btn">Register</button>
-            </div>
-          </div>
-
-          <div className="headerImage">
-            <img src="http://via.placeholder.com/440x660" alt="" />
+        <div className="heroContain">
+          <div className="heroHeadlines">
+            {/* here headline font 72px weight 400 */}
+            <h1>Flash It helps you study more efficiently</h1>
+              {/* here sub-headline font 24px-ish weight 400 */}
+            <h3>Say goodbye to mindless memorization and hello to an interactive learning experience.</h3>
+            <button className="btn">Get Started</button>
           </div>
         </div>
+        {/* <div className="introImage">
+          <img src="http://via.placeholder.com/1000x200" alt="" />
+        </div> */}
 
       </header>
 
       <main>
+        <section>
+          <div className="wrapper introContain">
+            <div className="intro">
+              <h2 className="introTitleH2">say hello to flash it</h2>
+              <p>A web-based flash card app to help with your memory recollection.</p>
+              <p>Are you tired of traditional study methods that feel mundane and ineffective? Look no further! Introducing the power of flashcards. The time-tested technique that has helped countless learners around the world achieve academic success.
+              </p>
+              <p>We believe that learning should be engaging, efficient, and tailored to individual needs. With our user-friendly interface and intuitive features, you can create and customize your own flashcards effortlessly.</p>
+              <div className="introBtns">
+                <a className="btn" href="#articles">Learn More</a>
+                <button className="btn">Get Started</button>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <section className="feature">
+          <div className="wrapper featureContain">
+
+            <div className="upperFeature">
+              <p>Why do flashcards remain a tried-and-true method for effective learning? It's simple. Our brains are wired to learn through repetition and association. Flashcards leverage these natural cognitive processes, making them a potent tool for information retention. By employing a combination of text, visuals, and active recall, our web app harnesses the full potential of flashcards to optimize your study sessions and supercharge your memory.</p>
+              <div className="featureImg">
+                <img src="http://via.placeholder.com/400x400" alt="" />
+              </div>
+            </div>
+
+            <div className="lowerFeature">
+              <div className="featureImg">
+                <img src="http://via.placeholder.com/400x400" alt="" />
+              </div>
+              <p>We believe that learning should be engaging, efficient, and tailored to individual needs. With our user-friendly interface and intuitive features, you can create and customize your own flashcards effortlessly. Whether you're studying for exams, learning a new language, or simply expanding your knowledge, our web app provides a versatile platform for mastering any subject.</p>
+            </div>
+
+          </div>
+        </section>
+
         <section className="callToAction">
           <div className="wrapper">
 
@@ -122,6 +173,7 @@ function App() {
                 <img className="logoImg" src={require('./assets/logo2.png')} alt="" />
               </div>
               <address>
+                <p>Flash It</p>
                 <p><a href="https://deanlane.ca/"> Dean Lane</a></p>
                 <p>Toronto, ON</p>
               </address>
