@@ -1,15 +1,14 @@
 // Header.js
-import NavBar from "./NavBar";
+import NavBar from "./NavBar.js";
 
 const Header = () => {
   return (
     <header>
 
-      <NavBar />
       <div className="wrapper heroContain">
         <div className="heroHeadlines">
           {/* here headline font 72px weight 400 */}
-          <h1>Flash It helps you study more efficiently</h1>
+          <h1><span>Flash It</span> helps you study more efficiently</h1>
           {/* here sub-headline font 24px-ish weight 400 */}
           <h3>Say goodbye to mindless memorization and hello to an interactive learning experience.</h3>
           <button className="btn">Get Started</button>
@@ -21,6 +20,7 @@ const Header = () => {
       </div>
 
     </header>
+
   )
 }
 

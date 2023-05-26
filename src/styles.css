@@ -1,5 +1,32 @@
 /* styles.css */
 
+/* VARIABLES */
+
+:root {
+
+  /* colours */
+  --black: #000000;
+  --white: #fdfdfd;
+  --lightGrey: #ecf0ef;
+  --mediumGrey: #b3beba;
+  --accent: rgba(183, 122, 91);
+  --accentO: rgba(183, 122, 91, 0.5);
+  --fontDark: #242424;
+  --logoFont: #515151;
+  --button: #c37656;
+  --callToActionBtn: #f6c34f;
+
+  /* fonts */
+  --lato: 'Lato', sans-serif;
+  --raleway: 'Raleway', sans-serif;
+  --logoFont: 'Permanent Marker', cursive;
+
+  /* sizes */
+  --navHeight: 100px;
+}
+
+/* VARIABLES END*/
+
 /* normalize */
 
 html {
@@ -291,6 +318,8 @@ object {
   border-radius: 50px;
   background-color: var(--callToActionBtn);
   cursor: pointer;
+  
+  
 }
 
 /* TYPOGRAPHY ELEMENTS RESET STYLES */
@@ -354,32 +383,7 @@ textarea:focus {
 }
 
 
-/* VARIABLES */
 
-:root {
-
-  /* colours */
-  --black: #000000;
-  --white: #fdfdfd;
-  --lightGrey: #ecf0ef;
-  --mediumGrey: #b3beba;
-  --accent: rgba(183, 122, 91);
-  --accentO: rgba(183, 122, 91, 0.5);
-  --fontDark: #242424;
-  --logoFont: #515151;
-  --button: #c37656;
-  --callToActionBtn: #f6c34f;
-
-  /* fonts */
-  --lato: 'Lato', sans-serif;
-  --raleway: 'Raleway', sans-serif;
-  --logoFont: 'Permanent Marker', cursive;
-
-  /* sizes */
-  --navHeight: clamp(60px, 12%, 100px);
-}
-
-/* VARIABLES END*/
 
 /* TYPOGRAPHY */
 
@@ -439,6 +443,11 @@ p {
   font-weight: 600;
 }
 
+.navLogin {
+  color: var(--fontDark);
+  font-weight: 600;
+}
+
 /* header */
 .heroHeadlines h1 {
   line-height: 1.2;
@@ -458,6 +467,11 @@ p {
   color: var(--lightGrey);
 }
 
+.loginText {
+  color: var(--button);
+}
+
+
 /* TYPOGRAPHY END*/
 
 
@@ -469,11 +483,11 @@ p {
   background-color: var(--lightGrey);
   height: var(--navHeight);
   display: flex;
-  position: fixed;
+  /* position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  z-index: 10;
+  z-index: 10; */
 }
 
 .navBar {
@@ -514,13 +528,10 @@ p {
 
 .auth {
   display: flex;
-  gap: 20px;
+  align-items: center;
+  gap: 40px;
 }
 
-.auth button:first-child {
-  background-color: transparent;
-  color: var(--fontDark)
-}
 
 /* NAVIGATION STYLES END*/
 
@@ -528,21 +539,22 @@ p {
 
 header {
   background-color: var(--lightGrey);
-  height: 100vh;
+  height: calc(100vh - var(--navHeight));
   background-image: url("./assets/light_half_hex.avif");
   background-size: cover;
   background-position: center;
 }
 
-/* .heroContain {
+.heroContain {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
-} */
+  height: 100%;
+}
 
 .heroHeadlines {
   text-align: center;
-  padding-top: 200px;
+  /* padding-top: 100px; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -550,12 +562,17 @@ header {
 }
 
 .heroHeadlines h1 {
-  width: 30%;
+  width: 100%;
   max-width: 450px;
 }
 
+.heroHeadlines span {
+  color: var(--button);
+  font-weight: 800;
+}
+
 .heroHeadlines h3 {
-  width: 20%;
+  width: 70%;
 }
 
 /* .download {
@@ -656,23 +673,23 @@ at the beginning */
   padding: 10px 0;
 }
 
-form {
+.callToAction form {
   display: flex; 
   justify-content: center;
   padding-top: 2%;
 }
 
-input {
+.callToAction input {
   border-radius: 5px;
   margin: 0 2%;
   padding-left: 1em;
 }
 
-input[type=text] {
+.callToAction input[type=text] {
   width: 20%;
 }
 
-input[type=email] {
+.callToAction input[type=email] {
   width: 30%;
 }
 
@@ -696,7 +713,7 @@ input[type=email] {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background-color: #fff;
+  background-color: var(--white);
   border-radius: 10px;
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
   overflow: hidden;
@@ -791,6 +808,57 @@ footer {
 /* LOGIN STYLES */
 /* LOGIN STYLES END*/
 /* REGISTER STYLES */
+.authentication {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - var(--navHeight));
+}
+
+.authContain {
+  width: 40%;
+  /* margin-top: 3%; */
+  background-color: var(--lightGrey);
+  border-radius: 10px;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+  padding: 3% 3%;
+}
+
+.authContain h1 {
+  text-align: center;
+  padding-bottom: 3%;
+}
+
+.authContain p {
+  text-align: center;
+  
+}
+
+.authContain form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.authContain form input {
+  height: 40px;
+  width: 90%;
+  padding-left: 20px;
+  border-radius: 10px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px inset;
+}
+
+.authContain form button {
+  margin: 3% 0;
+  width: 100%;
+}
+
+.loginText {
+  margin-left: 10px;
+}
+
+
 /* REGISTER STYLES END*/
 /* BUILD STYLES */
 /* BUILD STYLES END*/
@@ -800,3 +868,5 @@ footer {
 /* SETTINGS STYLES END*/
 /* MEDIA QUERIES */
 /* MEDIA QUERIES END*/
+
+/* TEST */

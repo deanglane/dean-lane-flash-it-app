@@ -1,5 +1,5 @@
-// Import: CSS
-import '../../styles.css';
+// FlashIt.js
+import Navigation from '../../components/Navigation.js'
 
 // Import: pages
 import Header from './Header.js';
@@ -9,7 +9,7 @@ import CallToAction from './CallToAction.js';
 import Articles from './Articles.js';
 import Footer from '../../components/Footer.js';
 
-const App = () => {
+const FlashIt = () => {
   return (
     <>
       <Header />
@@ -22,7 +22,7 @@ const App = () => {
       </main>
       <Footer />
     </>
-  );
+  )
 }
 
-export default App;
+export default FlashIt;
