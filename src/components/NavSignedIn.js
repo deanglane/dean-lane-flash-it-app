@@ -42,7 +42,7 @@ const AuthDetails = () => {
     <div>
         <>
           <p>{authUser.email}</p>
-          <button onClick={userSignOut}>Log Out</button>
+          <button className='btn' onClick={userSignOut}>Log Out</button>
         </> 
     </div>
   )

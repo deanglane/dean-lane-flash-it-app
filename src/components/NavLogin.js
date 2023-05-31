@@ -1,16 +1,19 @@
+import { Link } from 'react-router-dom';
+
 const NavLogin = () => {
   return (
     <ul>
       <li>
-        <a href="#">Build</a>
+        <Link to='/build'>Build</Link>
       </li>
       <li>
-        <a href="#">Review</a>
+        <Link to='/review'>Review</Link>
       </li>
       <li>
         <a href="#">Articles</a>
       </li>
     </ul>
+    
   )
 }
 

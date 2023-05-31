@@ -9,6 +9,7 @@ import FlashIt from "./pages/HomePage/FlashIt.js";
 import Register from './pages/Register/Register.js';
 import Login from './pages/Login/Login.js';
 import Build from './pages/Build/Build.js';
+import Review from './pages/Review/Review.js';
 
 // Modules
 import {
@@ -26,6 +27,7 @@ const App = () => {
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route path="/build" element={<Build />} />
+        <Route path="/review" element={<Review />} />
       </Routes>
     </>
   );

@@ -8,7 +8,7 @@ const Navigation = () => {
           <div className="logo">
             <img className="logoImg" src={require('../assets/logo2.png')} alt="" />
           </div>
-          {/* NAvLanding here         */}
+          {/* NavLanding here  */}
           {/* NavLogin Here */}
         </div>
       </div>  
