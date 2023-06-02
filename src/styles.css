@@ -910,13 +910,46 @@ footer {
 
 /* BUILD STYLES END*/
 /* REVIEW STYLES */
+
 .reviewSection {
   height: calc(100vh - var(--navHeight));
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  outline: 1px solid green;
+}
 
+
+
+.reviewHeader {
+  height: 70px;
+  text-align: center;
+}
+
+.flashCards ul {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.flashCards li {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.reviewCard--hidden {
+  
+  display: none;
+}
+
+.reviewCard--active {
+  padding: 50px;
+  width: 300px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 50px;
+  background-color: var(--white);
+  border-radius: 10px;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
 }
 
 /* REVIEW STYLES END*/

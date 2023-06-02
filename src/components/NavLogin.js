@@ -9,9 +9,6 @@ const NavLogin = () => {
       <li>
         <Link to='/review'>Review</Link>
       </li>
-      <li>
-        <a href="#">Articles</a>
-      </li>
     </ul>
     
   )

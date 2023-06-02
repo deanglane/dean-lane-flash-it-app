@@ -1,6 +1,5 @@
 // NavBar.js
 //Import: Components
-import Register from '../Register/Register.js';
 import NavLanding from '../../components/NavLanding.js';
 import NavSignin from '../../components/NavSignin.js';
 import NavSignedIn from '../../components/NavSignedIn.js';
@@ -8,10 +7,8 @@ import NavLogin from '../../components/NavLogin.js';
 
 // Import: Modules
 import {
-  Link,
   Routes,
   Route,
-  // useLocation
 } from 'react-router-dom';
 
 const NavBar = () => {
@@ -23,7 +20,7 @@ const NavBar = () => {
 
           <div className="navMenu">
             <div className="logo">
-              <img className="logoImg" src={require('../../assets/logo2.png')} alt="" />
+              <img className="logoImg" src={require('../../assets/logo.png')} alt="" />
             </div>
             <Routes>
               <Route path="*" element={<NavLanding />}/>

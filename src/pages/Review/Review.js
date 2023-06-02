@@ -1,27 +1,86 @@
 // Review.js
-import { getDatabase, ref, push } from 'firebase/database';
+import { getDatabase, ref, get } from 'firebase/database';
 import firebase from '../../util/firebase.js';
 import { getAuth } from "firebase/auth";
+import { useEffect, useState } from 'react';
 
-// TODO - Map through all the cards one by one
-// Fronts
-// retrieve the users first flash card front
-// put all the fronts into an array?
-// iterate through the array onClick
 
 
 const Review = () => {
+  const auth = getAuth();
+
+  const [flashCards, setFlashCards] = useState([]);
+  
+  useEffect(() => {
+    const database = getDatabase(firebase);
+    const dbRef = ref(database, `/profiles/${auth.currentUser.uid}/cards`);
+    
+    get(dbRef).then((snapshot) => {
+      if (snapshot.exists()) {
+        
+        const newState = [];
+        const cards = snapshot.val()
+        
+        for (const key in cards) {
+          const cardData = {
+            key: key,
+            card: cards[key]
+          };
+
+          newState.push(cardData);
+        }
+
+        setFlashCards(newState);
+        
+      } else {
+        console.log("No Cards Created");
+      }
+    }).catch((error) => {
+      console.log(error);
+    })
+
+  }, [])
+
+
+  const handleReveal = (e) => {
+    const reveal = e.target.parentElement.nextElementSibling;
+    reveal.classList.remove('reviewCard--hidden');
+    reveal.classList.add('reviewCard--active');
+  };
+
+  const handleHide = (e) => {
+    console.log('answer card', e.target.parentElement);
+    const hide = e.target.parentElement;
+    hide.classList.remove('reviewCard--active');
+    hide.classList.add('reviewCard--hidden');
+  };
+
   return (
     <>
       <section className="reviewSection wrapper">
-        <div className="flashCard">
-          <h2>Review</h2>
-          {/* show front card here */}
-          <div className="reviewButtons">
-            <button className="btn">previous</button>
-            <button className="btn">answer</button>
-            <button className="btn">next</button>
+        <div className="flashCards">
+          <div className="reviewHeader">
+            <h2>Review</h2>
           </div>
+
+          <ul>
+            {flashCards.map((flashCard) => {
+              return (
+                <li>
+                  <div className="reviewCard--active">
+                    <p>{flashCard.card.front}</p>
+                    <button className='btn' onClick={handleReveal}>Answer</button>
+
+                  </div>
+                  <div className="reviewCard--hidden">
+                    <p>{flashCard.card.back}</p>
+                    <button className='btn' onClick={handleHide}>Hide</button>
+                  </div>
+                </li>
+              )
+            })}
+          </ul>
+
         </div>
       </section>
     </>
