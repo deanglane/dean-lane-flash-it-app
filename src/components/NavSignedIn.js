@@ -3,8 +3,7 @@ import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
 import { useNavigate } from 'react-router-dom';
 
 
-const AuthDetails = () => {
-  const [userLoggedIn, setUserLoggedIn] = useState(true);
+const NavSignedIn = () => {
   const [authUser, setAuthUser] = useState('')
   const navigate = useNavigate();
 
@@ -28,12 +27,11 @@ const AuthDetails = () => {
         listen();
       }
     });
-  }, [auth]);
+  }, [auth, navigate]);
 
-  const userSignOut = () => {
+  const handleSignOut = () => {
     signOut(auth).then(() => {
       console.log('sign out successful!');
-      setUserLoggedIn(false);
       
     }).catch(error => console.log(error))
   };
@@ -42,10 +40,11 @@ const AuthDetails = () => {
     <div>
         <>
           <p>{authUser.email}</p>
-          <button className='btn' onClick={userSignOut}>Log Out</button>
+          <button className='btn' onClick={handleSignOut}>Log Out</button>
         </> 
     </div>
   )
 }
 
-export default AuthDetails;
+export default NavSignedIn;
+// AuthDetails

@@ -1,5 +1,5 @@
 // FlashIt.js
-import Navigation from '../../components/Navigation.js'
+
 
 // Import: pages
 import Header from './Header.js';

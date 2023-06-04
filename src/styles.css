@@ -915,8 +915,6 @@ footer {
   height: calc(100vh - var(--navHeight));
 }
 
-
-
 .reviewHeader {
   height: 70px;
   text-align: center;
