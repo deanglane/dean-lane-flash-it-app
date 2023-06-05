@@ -49,7 +49,6 @@ const Review = () => {
   };
 
   const handleHide = (e) => {
-    console.log('answer card', e.target.parentElement);
     const hide = e.target.parentElement;
     hide.classList.remove('reviewCard--active');
     hide.classList.add('reviewCard--hidden');
