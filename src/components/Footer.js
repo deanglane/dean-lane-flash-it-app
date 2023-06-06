@@ -28,19 +28,19 @@ const Footer = () => {
             <nav>
               <ul>
                 <li>
-                  <a href="#">How It Works</a>
+                  <p>How It Works</p>
                 </li>
                 <li>
-                  <a href="#">Features</a>
+                  <p>Features</p>
                 </li>
                 <li>
-                  <a href="#">Articles</a>
+                  <p>Articles</p>
                 </li>
                 <li>
-                  <a href="#">Who We Are</a>
+                  <p>Who We Are</p>
                 </li>
                 <li>
-                  <a href="#">Pricing</a>
+                  <p>Pricing</p>
                 </li>
               </ul>
             </nav>

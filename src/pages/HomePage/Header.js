@@ -1,5 +1,4 @@
 // Header.js
-import NavBar from "./NavBar.js";
 
 const Header = () => {
   return (

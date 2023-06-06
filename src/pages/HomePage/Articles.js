@@ -12,7 +12,7 @@ const Articles = () => {
 
           <div className="artCard">
             <div className="artCardHeader">
-              <img src={require('../../assets/aaron-burden-QJDzYT_K8Xg-unsplash.jpg')} alt="Photo by Aaron-Burden " />
+              <img src={require('../../assets/aaron-burden-QJDzYT_K8Xg-unsplash.jpg')} alt="Open books on a table" />
             </div>
             <div className="artCardBody">
               <h4>Boosting Memory Recollection:</h4>
@@ -25,7 +25,7 @@ const Articles = () => {
 
           <div className="artCard">
             <div className="artCardHeader">
-              <img src={require('../../assets/jo-szczepanska-bjemWZcNF34-unsplash.jpg')} alt="Photo by Jo Szczepanska" />
+              <img src={require('../../assets/jo-szczepanska-bjemWZcNF34-unsplash.jpg')} alt="cork board with post it notes" />
             </div>
 
             <div className="artCardBody">
@@ -39,7 +39,7 @@ const Articles = () => {
 
           <div className="artCard">
             <div className="artCardHeader">
-              <img src={require('../../assets/afonso-coutinho-2mN0Bxrnr34-unsplash.jpg')} alt="Photo by Afonso Coutinho" />
+              <img src={require('../../assets/afonso-coutinho-2mN0Bxrnr34-unsplash.jpg')} alt="Man sitting on a rock over looking water" />
             </div>
 
             <div className="artCardBody">

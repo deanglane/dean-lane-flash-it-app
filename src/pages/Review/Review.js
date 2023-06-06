@@ -5,15 +5,15 @@ import { getAuth } from "firebase/auth";
 import { useEffect, useState } from 'react';
 
 
-
 const Review = () => {
   const auth = getAuth();
+  const userId = auth.currentUser.uid;
 
   const [flashCards, setFlashCards] = useState([]);
   
   useEffect(() => {
     const database = getDatabase(firebase);
-    const dbRef = ref(database, `/profiles/${auth.currentUser.uid}/cards`);
+    const dbRef = ref(database, `/profiles/${userId}/cards`);
     
     get(dbRef).then((snapshot) => {
       if (snapshot.exists()) {
@@ -39,7 +39,7 @@ const Review = () => {
       console.log(error);
     })
 
-  }, [])
+  }, [userId])
 
 
   const handleReveal = (e) => {
