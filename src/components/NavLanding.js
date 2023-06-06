@@ -1,6 +1,6 @@
 const NavLanding = () => {
   return (
-    <div>
+    <div className="menuItems">
       <ul>
         <li>
           <p>Features</p>
