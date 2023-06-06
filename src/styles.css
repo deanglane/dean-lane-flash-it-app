@@ -451,6 +451,10 @@ p {
   font-weight: 600;
 }
 
+.navMenu h1 {
+  font-size: clamp(2.75rem, 2.6rem, 100px);
+}
+
 /* header */
 .heroHeadlines h1 {
   line-height: 1.2;
@@ -537,6 +541,8 @@ p {
 #menuToggle {
   display: none;
 }
+
+
 
 /* NAVIGATION STYLES END*/
 
@@ -645,6 +651,7 @@ header {
 .lowerFeature {
   display: flex;
   justify-content: center;
+  text-align: center;
 }
 
 .upperFeature p,
@@ -818,6 +825,7 @@ footer {
 
 /* HOME STYLES END*/
 /* LOGIN STYLES */
+
 /* LOGIN STYLES END*/
 /* REGISTER STYLES */
 .authentication {
@@ -1047,6 +1055,9 @@ MEDIA QUERIES
     display: none;
   }
 
+  .formContain {
+    width: 75%;
+  }
 
 }
 
@@ -1080,6 +1091,10 @@ MEDIA QUERIES
     justify-content: center;
   }
 
+  .navMenu h1 {
+    display: none;
+  }
+
   .auth {
     gap: 15px;
     display: none;
@@ -1089,6 +1104,8 @@ MEDIA QUERIES
     display: block;
     cursor: pointer;
   }
+
+
 
 }
 

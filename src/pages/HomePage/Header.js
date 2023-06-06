@@ -15,10 +15,6 @@ const Header = () => {
             <Link to="/register">Get Started</Link>
           </button>
         </div>
-        {/* <div className="download">
-            <p>Coming Soon!</p>
-            <img src={require('./assets/google-play-app-store-mobile-phones-google-thumbnail.jpg')} alt="" />
-          </div> */}
       </div>
 
     </header>

@@ -1,4 +1,6 @@
 // Intro.js
+// import: Modules
+import { Link } from "react-router-dom";
 
 const Intro = () => {
   return (
@@ -12,7 +14,9 @@ const Intro = () => {
           <p>We believe that learning should be engaging, efficient, and tailored to individual needs. With our user-friendly interface and intuitive features, you can create and customize your own flashcards effortlessly.</p>
           <div className="introBtns">
             <a className="btn" href="#articles">Learn More</a>
-            <button className="btn">Get Started</button>
+            <button className="btn">
+              <Link to="/register">Get Started</Link>
+            </button>
           </div>
         </div>
 

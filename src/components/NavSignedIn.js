@@ -24,28 +24,30 @@ const NavSignedIn = () => {
         setAuthUser(null)
         // navigate to the default home page
         navigate('/');
-        
+
       }
       return () => {
         listen();
       }
     });
-  // dependency arrays watching for changes, then run the useEffect
+    // dependency arrays watching for changes, then run the useEffect
   }, [auth, navigate, authUser.displayName]);
 
   const handleSignOut = () => {
     signOut(auth).then(() => {
-      
+
     }).catch(error => alert(error))
   };
 
   return (
-    <div>
-        <>
-          <p>Welcome {displayName}!</p>
-          <button className='btn' onClick={handleSignOut}>Log Out</button>
-        </> 
-    </div>
+
+
+      <div>
+        <p>Welcome {displayName}!</p>
+        <button className='btn' onClick={handleSignOut}>Log Out</button>
+      </div>
+
+
   )
 }
 

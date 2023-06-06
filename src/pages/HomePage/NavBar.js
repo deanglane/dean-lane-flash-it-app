@@ -25,6 +25,7 @@ const NavBar = () => {
             <div className="logo">
               <img className="logoImg" src={require('../../assets/logo.png')} alt="Company logo" />
             </div>
+            <h1>Flash It</h1>
             {/* Loading menu components based on whats in the URL. If the user is logged then NavLogin will display. If anything is typed that is not a page then default to the homepage */}
             <Routes>
               <Route path="*" element={<NavLanding />}/>
@@ -32,7 +33,7 @@ const NavBar = () => {
               <Route path="/Review" element={<NavLogin />} />
             </Routes>
           </div>
-
+          
           <Routes>
             <Route path="*" element={<NavSignin />} />
             <Route path="/Build" element={<NavSignedIn />} />
