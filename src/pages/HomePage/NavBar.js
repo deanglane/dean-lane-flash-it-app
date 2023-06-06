@@ -13,11 +13,7 @@ import {
   Route
 } from 'react-router-dom';
 
-
-
 const NavBar = () => {
-
-
 
   return (
     <>
@@ -27,15 +23,15 @@ const NavBar = () => {
 
           <div className="navMenu">
             <div className="logo">
-              <img className="logoImg" src={require('../../assets/logo.png')} alt="" />
+              <img className="logoImg" src={require('../../assets/logo.png')} alt="Company logo" />
             </div>
+            {/* Loading menu components based on whats in the URL. If the user is logged then NavLogin will display. If anything is typed that is not a page then default to the homepage */}
             <Routes>
               <Route path="*" element={<NavLanding />}/>
               <Route path="/Build" element={<NavLogin />}/>
               <Route path="/Review" element={<NavLogin />} />
             </Routes>
           </div>
-
 
           <Routes>
             <Route path="*" element={<NavSignin />} />
@@ -45,9 +41,7 @@ const NavBar = () => {
 
         </div>
       </nav>
-
-
-      
+     
     </>
   )
 }

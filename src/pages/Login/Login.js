@@ -32,24 +32,20 @@ const Login = () => {
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         // Signed in 
-        console.log(userCredential);
         const user = userCredential.user;
         const date = new Date();
         update(ref(database, 'profiles/' + user.uid), {
           last_login: date
         })
 
-        console.log('User signed in');
         setUserLoggedIn(true);
         // ...
       })
       .catch((error) => {
-        // const errorCode = error.code;
-        // const errorMessage = error.message;
         alert(error);
       });
     setEmail('');
-    setPassword("");
+    setPassword('');
   };
   return (
     <>

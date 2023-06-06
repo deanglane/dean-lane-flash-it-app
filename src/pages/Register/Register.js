@@ -50,7 +50,6 @@ const Register = () => {
           userName: userName
         })
 
-        console.log('user created!')
         setUserLoggedIn(true);
 
       })
@@ -71,8 +70,8 @@ const Register = () => {
         <div className="wrapper authContain">
           <h1>Signup</h1>
           <form onSubmit={handleRegister}>
-            <label onChange={(e) => setUserName(e.target.value)} value={userName} htmlFor="userName"></label>
-            <input type="text" id="userName" placeholder="User Name" required />
+            <label htmlFor="userName"></label>
+            <input onChange={(e) => setUserName(e.target.value)} value={userName} type="text" id="userName" placeholder="User Name" required />
 
             <label htmlFor="email"></label>
             <input onChange={(e) => setEmail(e.target.value)} value={email} type="text" id="email" placeholder="E-mail Address" required />

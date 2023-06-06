@@ -11,35 +11,35 @@ const NavSignedIn = () => {
 
   useEffect(() => {
     const listen = onAuthStateChanged(auth, (user) => {
+      // If the user has signed in
       if (user) {
-        // User is signed in, see docs for a list of available properties
-        // https://firebase.google.com/docs/reference/js/firebase.User
-        // const uid = user.uid;
+
         setAuthUser(user);
-        // ...
+
       } else {
-        // User is signed out
+        // if User is signed out set AuthUser State to null
         setAuthUser(null)
+        // navigate to the default home page
         navigate('/');
-        // ...
+        
       }
       return () => {
         listen();
       }
     });
+  // dependency arrays watching for changes, then run the useEffect
   }, [auth, navigate]);
 
   const handleSignOut = () => {
     signOut(auth).then(() => {
-      console.log('sign out successful!');
       
-    }).catch(error => console.log(error))
+    }).catch(error => alert(error))
   };
 
   return (
     <div>
         <>
-          <p>{authUser.email}</p>
+        <p>Welcome {authUser.displayName}!</p>
           <button className='btn' onClick={handleSignOut}>Log Out</button>
         </> 
     </div>

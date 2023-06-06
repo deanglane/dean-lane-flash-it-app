@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import firebase from '../../util/firebase.js';
 import { getDatabase, ref, push } from 'firebase/database';
 import { getAuth } from "firebase/auth";
+import { Link } from 'react-router-dom';
 
 const Build = () => {
 
@@ -30,12 +31,21 @@ const Build = () => {
     //spreading existing state back into new state value
     setUserInput({ ...userInput, [e.target.name]: e.target.value });
   }
-
   return (
     <>
       <section className="formSection">
-        <div className='formContain wrapper'>
-        <h2>Card Builder</h2>
+        <div className="buildHeader wrapper">
+          <h2>Card Builder</h2>
+          <div className="navButtons">
+            <Link to='/build'>
+              <button className='btn'>Build</button>
+            </Link>
+            <Link to='/review'>
+              <button className='btn'>Review</button>
+            </Link>
+          </div>
+        </div>
+        <div className='formContain'>
           <form onSubmit={handleSubmit} action="submit">
 
             <label htmlFor="front">Front</label>

@@ -1,16 +1,19 @@
 // Header.js
 
+// import: Modules
+import { Link } from "react-router-dom";
+
 const Header = () => {
   return (
     <header>
 
       <div className="wrapper heroContain">
         <div className="heroHeadlines">
-          {/* here headline font 72px weight 400 */}
           <h1><span>Flash It</span> helps you study more efficiently</h1>
-          {/* here sub-headline font 24px-ish weight 400 */}
           <h3>Say goodbye to mindless memorization and hello to an interactive learning experience.</h3>
-          <button className="btn">Get Started</button>
+          <button className="btn">
+            <Link to="/register">Get Started</Link>
+          </button>
         </div>
         {/* <div className="download">
             <p>Coming Soon!</p>

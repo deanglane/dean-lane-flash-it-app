@@ -1,15 +1,25 @@
 // Review.js
-import { getDatabase, ref, get } from 'firebase/database';
+
+// import Modules
+import { getDatabase, 
+  ref, 
+  get } from 'firebase/database';
 import firebase from '../../util/firebase.js';
 import { getAuth } from "firebase/auth";
-import { useEffect, useState } from 'react';
+import { useEffect, 
+  useState } from 'react';
 
+// import components
+import Cards from './Cards.js';
+import { Link } from 'react-router-dom';
 
-const Review = () => {
+  const Review = ({ displayName }) => {
+  
+  const [flashCards, setFlashCards] = useState([]);
+  const [checkCards, setCheckCards] = useState('');
+  
   const auth = getAuth();
   const userId = auth.currentUser.uid;
-
-  const [flashCards, setFlashCards] = useState([]);
   
   useEffect(() => {
     const database = getDatabase(firebase);
@@ -17,7 +27,7 @@ const Review = () => {
     
     get(dbRef).then((snapshot) => {
       if (snapshot.exists()) {
-        
+        setCheckCards(false)
         const newState = [];
         const cards = snapshot.val()
         
@@ -26,33 +36,24 @@ const Review = () => {
             key: key,
             card: cards[key]
           };
-
+          
           newState.push(cardData);
+          
         }
 
         setFlashCards(newState);
-        
+
       } else {
-        console.log("No Cards Created");
+
+        setCheckCards(true)
+
       }
     }).catch((error) => {
-      console.log(error);
+      alert(error);
     })
 
   }, [userId])
 
-
-  const handleReveal = (e) => {
-    const reveal = e.target.parentElement.nextElementSibling;
-    reveal.classList.remove('reviewCard--hidden');
-    reveal.classList.add('reviewCard--active');
-  };
-
-  const handleHide = (e) => {
-    const hide = e.target.parentElement;
-    hide.classList.remove('reviewCard--active');
-    hide.classList.add('reviewCard--hidden');
-  };
 
   return (
     <>
@@ -60,25 +61,24 @@ const Review = () => {
         <div className="flashCards">
           <div className="reviewHeader">
             <h2>Review</h2>
+            <Link to='/build'>
+              <button className='btn'>Build</button>
+            </Link>
+            <Link to='/review'>
+              <button className='btn'>Review</button>
+            </Link>
           </div>
-
-          <ul>
-            {flashCards.map((flashCard) => {
-              return (
-                <li>
-                  <div className="reviewCard--active">
-                    <p>{flashCard.card.front}</p>
-                    <button className='btn' onClick={handleReveal}>Answer</button>
-
-                  </div>
-                  <div className="reviewCard--hidden">
-                    <p>{flashCard.card.back}</p>
-                    <button className='btn' onClick={handleHide}>Hide</button>
-                  </div>
-                </li>
-              )
-            })}
-          </ul>
+          {/* ternary expression to check if there are cards created in the database, If false a message will be displayed, if true the cards will display */}
+          {
+            checkCards ? (
+              <div className="noCards">
+                <h3>No Cards Created.</h3>
+                <p>Go to the build page and start creating your flash it deck now!</p>
+              </div>
+          ) : (
+              <Cards flashCards={flashCards}/>
+          )
+          }
 
         </div>
       </section>
