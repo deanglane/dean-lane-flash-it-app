@@ -8,15 +8,15 @@ const CallToAction = () => {
         <h2 className="callH2">Stay In Touch</h2>
         <h3 className="callH3">Join our mailing list</h3>
 
-        <form>
+        <form action="https://formspree.io/f/xrgvwykp" method="POST">
 
           <label className="sr-only" htmlFor="name"></label>
-          <input type="text" id="name" placeholder="Name" />
+          <input type="text" id="name" name="User's Name" placeholder="Name" required />
 
           <label className="sr-only" htmlFor="email"></label>
-          <input type="email" id="email" placeholder="E-mail Address" />
+          <input type="email" id="email" name="User's E-mail" placeholder="E-mail Address" required />
 
-          <button className="btn">Join</button>
+          <button type="submit" className="btn">Join</button>
         </form>
       </div>
     </section>

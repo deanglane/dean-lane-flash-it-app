@@ -477,9 +477,6 @@ p {
 
 /* TYPOGRAPHY END*/
 
-
-
-
 /* NAVIGATION STYLES */
 
 .topNav {
@@ -665,6 +662,10 @@ header {
 
 .lowerFeature {
   display: flex;
+}
+
+.featureImg img {
+  width: 400px;
 }
 
 /* call to action section */
@@ -954,7 +955,7 @@ footer {
 
 .flashCards li {
   display: flex;
-  /* justify-content: space-between; */
+
   flex-wrap: wrap;
   text-align: center;
 }

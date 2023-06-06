@@ -29,11 +29,10 @@ const Register = () => {
     if (userLoggedIn) {
       navigate('/build');
     }
-  }, [userLoggedIn, navigate]);
+  },);
 
   const handleRegister = (e) => {
     e.preventDefault();
-
     
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
@@ -49,7 +48,6 @@ const Register = () => {
           email: email,
           userName: userName
         })
-
         setUserLoggedIn(true);
 
       })
@@ -60,10 +58,12 @@ const Register = () => {
         console.log(errorMessage);
         // ..
       });
+    
 
     setEmail('');
     setPassword('');
   };
+
   return (
     <>
       <section className="authentication">

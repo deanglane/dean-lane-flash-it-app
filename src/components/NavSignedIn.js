@@ -5,9 +5,11 @@ import { useNavigate } from 'react-router-dom';
 
 const NavSignedIn = () => {
   const [authUser, setAuthUser] = useState('')
+  const [displayName, setDisplayName] = useState('')
   const navigate = useNavigate();
 
   const auth = getAuth();
+
 
   useEffect(() => {
     const listen = onAuthStateChanged(auth, (user) => {
@@ -15,6 +17,7 @@ const NavSignedIn = () => {
       if (user) {
 
         setAuthUser(user);
+        setDisplayName(authUser.displayName);
 
       } else {
         // if User is signed out set AuthUser State to null
@@ -28,7 +31,7 @@ const NavSignedIn = () => {
       }
     });
   // dependency arrays watching for changes, then run the useEffect
-  }, [auth, navigate]);
+  }, [auth, navigate, authUser.displayName]);
 
   const handleSignOut = () => {
     signOut(auth).then(() => {
@@ -39,7 +42,7 @@ const NavSignedIn = () => {
   return (
     <div>
         <>
-        <p>Welcome {authUser.displayName}!</p>
+          <p>Welcome {displayName}!</p>
           <button className='btn' onClick={handleSignOut}>Log Out</button>
         </> 
     </div>
