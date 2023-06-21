@@ -1,24 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+// App.js //
 
-function App() {
+// Import: CSS
+import './styles.css';
+
+// Import: Pages
+import NavBar from './pages/HomePage/NavBar';
+import FlashIt from "./pages/HomePage/FlashIt.js";
+import Register from './pages/Register/Register.js';
+import Login from './pages/Login/Login.js';
+import Build from './pages/Build/Build.js';
+import Review from './pages/Review/Review.js';
+
+// Modules
+import {
+  Routes,
+  Route,
+} from 'react-router-dom';
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <NavBar />
+
+      <Routes>
+        <Route path="/" element={<FlashIt />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/build" element={<Build />} />
+        <Route path="/review" element={<Review />} />
+      </Routes>
+    </>
   );
 }
 
