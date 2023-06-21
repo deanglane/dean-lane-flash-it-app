@@ -1,4 +1,7 @@
 // Articles.js
+import art1 from '../../assets/aaron-burden-QJDzYT_K8Xg-unsplash.jpg';
+import art2 from '../../assets/jo-szczepanska-bjemWZcNF34-unsplash.jpg';
+import art3 from '../../assets/afonso-coutinho-2mN0Bxrnr34-unsplash.jpg';
 
 const Articles = () => {
   return (
@@ -12,7 +15,7 @@ const Articles = () => {
 
           <div className="artCard">
             <div className="artCardHeader">
-              <img src={require('../../assets/aaron-burden-QJDzYT_K8Xg-unsplash.jpg')} alt="Open books on a table" />
+              <img src={art1} alt="Open books on a table" />
             </div>
             <div className="artCardBody">
               <h4>Boosting Memory Recollection:</h4>
@@ -25,7 +28,7 @@ const Articles = () => {
 
           <div className="artCard">
             <div className="artCardHeader">
-              <img src={require('../../assets/jo-szczepanska-bjemWZcNF34-unsplash.jpg')} alt="cork board with post it notes" />
+              <img src={art2} alt="cork board with post it notes" />
             </div>
 
             <div className="artCardBody">
@@ -39,7 +42,7 @@ const Articles = () => {
 
           <div className="artCard">
             <div className="artCardHeader">
-              <img src={require('../../assets/afonso-coutinho-2mN0Bxrnr34-unsplash.jpg')} alt="Man sitting on a rock over looking water" />
+              <img src={art3} alt="Man sitting on a rock over looking water" />
             </div>
 
             <div className="artCardBody">
