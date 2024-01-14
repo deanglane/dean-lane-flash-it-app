@@ -3,6 +3,7 @@ import firebase from "../../util/firebase.js";
 import { getDatabase, ref, push } from "firebase/database";
 import { getAuth } from "firebase/auth";
 import { Link } from "react-router-dom";
+import toast, { Toaster } from "react-hot-toast";
 
 const Build = () => {
   const [userInput, setUserInput] = useState({
@@ -24,13 +25,24 @@ const Build = () => {
       back: "",
       front: "",
     });
-    alert("Card Submitted");
+
+    toast.success("Successfully created!");
   };
   const handleChange = (e) => {
     //spreading existing state back into new state value
     // pushes each new card to the end of the array
     setUserInput({ ...userInput, [e.target.name]: e.target.value });
   };
+
+  const handleClear = (e) => {
+    e.preventDefault();
+    setUserInput({
+      back: "",
+      front: "",
+    });
+    toast("Form Cleared!");
+  };
+
   return (
     <>
       <section className="formSection">
@@ -72,13 +84,16 @@ const Build = () => {
             </div>
 
             <div className="formButtons">
-              <button className="btn">Clear</button>
+              <button className="btn" type="button" onClick={handleClear}>
+                Clear
+              </button>
               <button className="btn" type="submit">
                 Submit
               </button>
             </div>
           </form>
         </div>
+        <Toaster />
       </section>
     </>
   );
