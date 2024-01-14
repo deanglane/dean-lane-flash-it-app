@@ -870,44 +870,52 @@ footer {
   height: calc(100vh - var(--navHeight));
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
   align-items: center;
 }
 
 .buildHeader {
   display: flex;
-  flex-direction: column;
+  justify-content: space-around;
   align-items: center;
 }
 
-.navButtons {
-  padding: 20px 0 20px 0;
+.buildHeader h2 {
+  font-size: 2rem;
+  margin: 1.5rem 0;
+}
+
+.navButtons .btn1 {
+  margin-right: 1rem;
 }
 
 .formContain {
-  width: 50%;
-  /* height: 70%; */
+  width: 80%;
   padding: 3%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 5%;
+  margin: 3%;
   border-radius: 10px;
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
-  /* overflow: hidden; */
+  outline: 1px solid green;
 }
 
 .formContain form {
   width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  /* justify-content: center; */
+}
+
+.inputContainer {
+  display: flex;
+}
+
+.formContain .front,
+.formContain .back {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .formContain form textarea {
-  height: 200px;
+  height: 300px;
   width: 90%;
   padding: 20px;
   border-radius: 10px;
@@ -918,20 +926,35 @@ footer {
 .formButtons {
   display: flex;
   justify-content: center;
-  gap: 5%;
+  margin-top: 2rem;
+  gap: 2%;
 }
 
 /* BUILD STYLES END*/
 
 /* REVIEW STYLES */
 
-.reviewSection {
+.flashCards {
   height: calc(100vh - var(--navHeight));
 }
 
 .reviewHeader {
-  height: 70px;
-  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.reviewHeader h2 {
+  font-size: 2rem;
+  margin: 1.5rem 0;
+}
+
+.reviewNavBtn .btn1 {
+  margin-right: 1rem;
+}
+
+.instructions p {
+  font-size: 1.2rem;
 }
 
 .flashCards ul {
