@@ -1,3 +1,4 @@
+
 Current Version v1.0 Beta
 
 # Flash It!
@@ -32,3 +33,4 @@ Supercharge Your Brain with Flash it! 🧠✨ Unleash the Power of Personalized 
 - randomize toggle for review section
 -
 - animations for card reveals
+
