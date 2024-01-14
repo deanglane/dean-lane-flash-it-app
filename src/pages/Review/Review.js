@@ -71,7 +71,17 @@ const Review = ({ displayName }) => {
               </p>
             </div>
           ) : (
-            <Cards flashCards={flashCards} />
+            <div className="reviewCards">
+              <div className="instructions">
+                <p>Here are your flash cards to review</p>
+                <p>Click on the answer button to reveal the back side</p>
+                <p>
+                  When the back is revealed, click the Hide button to remove the
+                  card from view
+                </p>
+              </div>
+              <Cards flashCards={flashCards} />
+            </div>
           )}
         </div>
       </section>
