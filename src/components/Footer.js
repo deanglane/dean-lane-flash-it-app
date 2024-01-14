@@ -3,20 +3,26 @@
 const Footer = () => {
   return (
     <footer>
-
       <div className="upperFooter">
-
         <div className="wrapper siteMap">
           <div className="branding">
             <div className="logo">
-              <img className="logoImg" src={require('../assets/logo2.png')} alt="" />
+              <img
+                className="logoImg"
+                src={require("../assets/logo2.png")}
+                alt=""
+              />
             </div>
             <address>
               <p>Flash It</p>
-              <p><a href="https://deanlane.ca/"> Dean Lane</a></p>
+              <p>
+                <a href="https://deanlane.ca/"> Dean Lane</a>
+              </p>
               <p>Toronto, ON</p>
             </address>
-            <p>Copyright <span>&copy;</span> All rights reserved</p>
+            <p>
+              Copyright <span>&copy;</span> All rights reserved
+            </p>
           </div>
 
           <div className="quote">
@@ -46,20 +52,22 @@ const Footer = () => {
             </nav>
           </div>
         </div>
-
       </div>
 
       <div className="lowerFooter">
-        <div className="junoBrand">
-          <div className="junoLogo">
-            <img src={require('../assets/Juno_college_logo.webp')} alt="" />
-          </div>
-          <p>Created at <a href="https://junocollege.com/">Juno College</a></p>
+        <div className="brand">
+          <p>
+            Created by{" "}
+            <span>
+              <a href="https://deanlane.ca/">Dean Lane </a>
+            </span>
+            Copyright
+            <span> &copy; </span> All rights reserved
+          </p>
         </div>
       </div>
-
     </footer>
-  )
-}
+  );
+};
 
 export default Footer;
